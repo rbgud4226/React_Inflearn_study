@@ -3,3 +3,5 @@
 2.prettier -> 저장하면 자동 정렬 , 설치 후 format on save 체크
 3.Material Icon Theme ->아이콘 테마 
 4.error lens ->오류 메세지 태그
+
+5.ctrl + shift + p ->검색으로 실행하기
