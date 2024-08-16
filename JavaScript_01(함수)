@@ -1,0 +1,18 @@
+//함수 선언
+function greeting() {
+  console.log("안녕하세요");
+}
+//함수 호출
+greeting();
+
+//직사각형의 넓이구하기
+function getArea(a, b) {
+  let area = a * b;
+  return area;
+  console.log("리턴끝"); // return 후 종료됨으로 출력x
+}
+//area1에 함수의 결과값을 할당 할 수 있음
+let area1 = getArea(10, 20);
+
+//JS에서는 함수의 호출밑에 함수를 선언해도 정상적으로 동작
+//->이유 : JS는 "호이스팅" 기능때문!
