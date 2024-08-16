@@ -1,0 +1,22 @@
+//1.함수 표현식
+function funcA() {
+  console.log("funcA");
+}
+
+//함수 자체를 변수에 담음
+let varA = funcA;
+varA();
+
+//선언과 동시에 함수를 담을 수 있음
+let varB = function () {
+  //이름 생략가능, 익명함수
+  console.log("funcB");
+};
+varB();
+
+//2.화살표 함수
+let varC = () => {
+  return 1;
+};
+//let varC = (value) => value + 1;  가능
+console.log(varC());
