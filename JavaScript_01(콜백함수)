@@ -1,0 +1,32 @@
+1.콜백함수 : 자신이 아닌 다른함수에, 인수로써 전달된 함수를 의미
+  fuction main(value) {
+  value()
+  }
+  function sub() {
+  console.log("sub")
+  }
+main(sub); -> sub함수를 main함수의 값으로 전달
+value는 sub함수를 의미하기때문에
+value() 의 결과값은 sub가 출력
+
+2.메인함수에서는 원하는 타이밍에 sub 함수를 실행 시킬 수 있는 장점이 있음
+
+3.단축해서 다음과 같이도 표현 가능
+main(() => {
+  console.log("sub");
+});
+
+4.콜백함수의 활용
+1에서 5까지의 count를 출력하는 함수를 선언하고 (1,2,3,4,5)
+그 함수의 2의 배수를 출력하려고할때(2,4,6,8,10)
+새롭게 함수를 선언하는게 아닌 콜백함수를 사용해서 출력할 결과값에만 2를 곱해주면 더 간단하고 중복을 방지할 수 있음
+function repeat(count, callback) {
+  for(let idx=1; idx<=count; idx++){
+    callback(idx);
+  }
+}
+
+//2의 배수로 출력가능
+repeat(5, (idx)=>{
+  console.log(idx * 2)
+});
