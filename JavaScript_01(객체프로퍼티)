@@ -1,0 +1,49 @@
+//1.객체의 생성
+//Js에서 객체 생성의 방법은 2가지
+
+//#1번 방식
+let obj1 = new Object();
+//#2번 방식, 객체 리터럴 방식
+let obj2 = {};
+
+//person 객체 생성
+//객체 안에 저장되있는 정보값 = 객체 속성, 객체 프로퍼티
+// :을 기준으로 key : value 형태
+// key값은 문자, 숫자만 가능
+// 띄어쓰기의 경우 "" 로 감싸줘야됨
+let person = {
+  name: "이름",
+  age: 20,
+  hobby: "취미",
+  job: "직업",
+  extra: {},
+  "like cat": true,
+};
+
+//객체 프로퍼티 다루는 방법, 프로퍼티 접근방법 2개
+
+//#점 표기법, 값 존재하지않으면 undefined 반환
+let name = person.name;
+console.log(name);
+
+//#괄호 표기법, 꼭 키값을 ""로 작성해야된다
+let age = person["age"];
+//이런 방식으로 괄호 표기법 사용, 동적으로 가능
+let property = "hobby";
+let hobby = person[property];
+
+//새로운 프로퍼티 추가 방법
+person.job = "추가직업";
+person["food"] = "음식";
+
+//프로퍼티 수정 방법
+person.job = "수정직업";
+person["food"] = "수정음식";
+
+//프로퍼티 삭제 방법
+delete person.job;
+delete person["food"];
+
+//프로퍼티 존재유무 확인 방법 (in 연산자)
+// T/F로 반환
+let result1 = "name" in person;
