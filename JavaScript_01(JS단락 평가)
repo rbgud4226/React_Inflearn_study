@@ -1,0 +1,24 @@
+//단락 평가, and or 연산에서 값에 따라서 결과가 이미 정해지면 두번째 값은 비교조차 하지 않음
+function returnFalse() {
+  return false;
+}
+
+function returnTrue() {
+  return true;
+}
+
+//첫번째가 False임으로 무조건 False라서 두번째 값은 호출조차 하지 않음
+console.log(returnFalse() && returnTrue());
+
+//활용 사례
+function printName(person) {
+  console.log(person && person.name); //person이 없으면 undefined 출력
+}
+
+function printName2(person) {
+  const name = person && person.name;
+  console.log(name || "person값이 없음");
+}
+
+printName2(); // person값이 없음 출력
+printName2({ name: "이름" }); //이름 출력
