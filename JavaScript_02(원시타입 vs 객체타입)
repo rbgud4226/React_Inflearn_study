@@ -1,0 +1,24 @@
+//원시타입 , Number, String , Boolean, Nullm Undefined
+//값 자체로 변수에 저장되고 복사됨
+//불변값
+
+//객체타입 Object, Array, Function
+//원본 데이터 자체가 수정됨
+//가변값
+
+//얕은 복사 , 원본객체가 수정될수 있어 위험
+let o3 = { name: "이름" };
+let o4 = o3;
+
+//깊은 복사, 원본객체 수정 x
+let o1 = { name: "이름" };
+let o2 = { ...o1 }; // Spread연산자를 사용해서 새로운 객체 선언하면 o1, o2는 서로 다른 참조값을 갖는다.
+
+//객체간의 비교는 참조값을 기준으로 이루어짐
+
+//얕은비교, ===으로 참조값을 비교
+console.log(o3 === o4); //true
+console.log(o1 === o3); //false
+
+//깊은 비교, 내장함수를 통해 문자열로 변환해서 비교
+JSON.stringify(o1); // 객체를 문자열로 변환하는 기능을 통해 비교하면 true
